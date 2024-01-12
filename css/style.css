@@ -1,0 +1,292 @@
+:root {
+  --blanco: #ffffff;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #490606;
+  --oscuro: #212121;
+  --griss: rgb(75, 71, 71);
+  --grissclaro: #ccdae9;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+  scroll-snap-type: y mandatory;
+}
+
+/**scroll snap **/
+.servicio,
+.navegacion-principal,
+.formulario {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* estas lineas nos ayudan a determinar la caja yq ue cuando se adapte un padin o un border no sume a la emdida establecida */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+p {
+  line-height: 2;
+}
+body {
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient(to top, var(--grissclaro) 0%, white 100%);
+  min-height: 100%;
+}
+h1 {
+  font-size: 1.4rem;
+}
+h1 span {
+  font-size: 1.8rem;
+  color: #ffc107;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h3 {
+  color: var(--secundario);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.contenedor {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.sombra {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+}
+
+/** Utilidades **/
+@media (min-width: 768px) {
+  .w-sm-100 {
+    width: auto;
+  }
+}
+
+.w-sm-100 {
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.alinear-derecha {
+  justify-content: flex-end;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+.navegacion {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .navegacion {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.navegacion a {
+  padding: 1rem 2rem;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.navegacion a:hover {
+  background-color: var(--primario);
+  color: var(--griss);
+}
+.navegacion a:last-of-type {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .navegacion a {
+    margin-bottom: 0;
+  }
+}
+
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: none;
+  background-size: cover;
+  height: 410px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.contenido-hero {
+  position: absolute;
+  /*+background-color: rgba(71, 71, 71, .5); /* aplicando sobra anterior  */
+  background-color: rgba(0 0 0 / 50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+.ubicacion {
+  display: flex;
+  align-items: center;
+}
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-bottom: #212121;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 85%;
+  text-align: center;
+  border: none;
+}
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
+}
+
+.boton:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /**  grid-template-columns: 300px 300px;
+            /** grid-template-rows: 200px 400px;            este es la forma sin abreviar 
+            /**grid-template-columns: 33.3% 33.3% 33.3% ;  tambien lo puedes hacer de esta forma pero ten presente
+            /** la sieguiente 
+            /** grid-template-columns: 1fr 1fr 1fr ; y ahora esta tambien para que  puedas crear tus columnas **/
+    column-gap: 1rem;
+
+    /**  .servicio .icono{
+            height: 13rem;
+            width: 13rem;
+            background-color:var(--primario);
+            border-radius: 13rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }**/
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+
+.servicio .icono {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 15rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.servicio p {
+  line-height: 2; /** aplicar interlineado **/
+  text-align: center;
+}
+
+.formulario {
+  background-color: var(--griss);
+  width: min(50rem, 100%); /**utiliza el valor mas pegueño y si no toma el 100% */
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  color: var(--primario);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: auto;
+}
+
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+  }
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+    grid-column: 1/3;
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  font-weight: bold;
+  color: var(--blanco);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.campo textarea {
+  height: 18rem;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer-span {
+  font-weight: bold;
+  font-size: large;
+}
